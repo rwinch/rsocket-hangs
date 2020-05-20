@@ -1,0 +1,24 @@
+plugins {
+	id 'java'
+}
+
+group = 'sample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation platform('io.rsocket:rsocket-bom:1.0.0')
+	implementation 'io.rsocket:rsocket-core'
+	implementation 'io.rsocket:rsocket-transport-netty'
+	testImplementation("org.assertj:assertj-core:3.11.1")
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+}
+
+test {
+	useJUnitPlatform()
+}
